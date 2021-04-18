@@ -33,3 +33,8 @@ git push origin <<分支名稱>>
 
 ### **STEP8** 提交作業網址
 畫面跳轉後，複製頁面網址，到[這裡](https://learning.lidemy.com/course)按下繳交作業，貼上複製連結後送出，就完成交作業流程。
+
+### 作業改完並 merge 後
+1. 在本地端切換到 master : git checkout master
+2. 將最新版本 pull 下來 : git pull origin master
+3. 將分支 week1 刪除 : git branch -d week1
