@@ -16,14 +16,14 @@ git config --global user.email "your email"
 #### **STEP1** 新增一個要拿來裝笑話的資料夾
 先新增一個 joke 資料夾，並移動到資料夾位置
 ```bash
-mkdir joke //建立名為joke的資料夾
-cd joke //位置移動到資料夾裡
+mkdir joke #建立名為joke的資料夾
+cd joke #位置移動到資料夾裡
 ```
 
 #### **STEP2** 將資料夾初始化
 讓 git 開始對資料夾進行版本控制
 ```bash
-git init //將產生一個隱藏檔案 .git
+git init #將產生一個隱藏檔案 .git
 ```
 可透過指令 **ls -al** 確認是否有產生 .git 資料夾
 .git 裡面會包含系統檔
@@ -50,14 +50,14 @@ touch note.txt
 此時檔案尚未加入版本控制
 #### **STEP5** 決定哪些檔案要加入版本控制
 ```bash
-git add test.js //指定將test.js加入版本控制中
+git add test.js #指定將test.js加入版本控制中
 ```
 - 如果資料夾內全部檔案均要版控，可以使用 `git add .` ，就能把當前路徑的檔案全部加入版控。
 - 若要取消加入版控，可使用 `git rm --cached 檔案名稱` 
 - 排除檔案: 若有確定不想加入版控的檔案，可使用.gitignore忽略該檔案，這樣就不需要每一次commit前特別挑出來。
 ```bash
-touch .gitignore //新增一個 .gitignore 檔
-vim .gitignore //進入 vim 模式後將排除檔案輸入再離開即可
+touch .gitignore #新增一個 .gitignore 檔
+vim .gitignore #進入 vim 模式後將排除檔案輸入再離開即可
 ```
 #### **STEP6** 新建一個版本
 ```bash
@@ -66,8 +66,8 @@ git commit
 將進入vim模式，輸入版本名稱後儲存離開即可
 - 變化型
 ```bash
-git commit -m "版本名稱" //不會進入vim模式，可直接命名
-git commit -am "版本名稱" //結合add跟版本命名，可省略 git add 步驟
+git commit -m "版本名稱" #不會進入vim模式，可直接命名
+git commit -am "版本名稱" #結合add跟版本命名，可省略 git add 步驟
 ```
 每次笑話有新版本時就要commit一次
 
@@ -78,14 +78,14 @@ git log
 ```
 - 變化型
 ```bash
-git log oneline //輸出簡潔的版本紀錄
+git log oneline #輸出簡潔的版本紀錄
 ```
 ### 在各笑話版本 / 分支中切換
 透過輸入版本編號或分支名稱，就能切換到任何commit過的版本
 ```bash
-git checkout 版本編號 //切換commit過的版本
-git checkout 分支名稱 //切換branch新增的分支
-git checkout master //切換到最新版本
+git checkout 版本編號 #切換commit過的版本
+git checkout 分支名稱 #切換branch新增的分支
+git checkout master #切換到最新版本
 ```
 ### Branch 分支
 #### 為什麼需要 Branch
@@ -102,7 +102,7 @@ ex 如果有人要跟你一起同時想笑話的話，為了避免檔案互相�
 根據 GitHub 提供的指令，在本地端輸入指令後，就能將本地端的資料庫的檔案上傳到 GitHub 遠端的資料庫。
 ```bash
 git remote add origin https://github.com/peng-jing/test2.git
-git branch -M main //可自己決定名稱
+git branch -M main #可自己決定名稱
 git push -u origin main
 ```
 #### 如何上傳更新的檔案 ( push )
