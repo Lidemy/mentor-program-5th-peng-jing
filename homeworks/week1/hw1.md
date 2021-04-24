@@ -1,30 +1,30 @@
-## 交作業流程
+# 交作業流程
 
 ### **STEP1** 設定 GitHub repo
 透過 GitHub classroom 連結產生一個新的 repositories
 
 ### **STEP2** 複製連結
-![在這邊複製連結](https://github.com/peng-jing/test/blob/main/1.JPG?raw=true)
+![](https://github.com/peng-jing/test/blob/main/1.JPG?raw=true)
 
 ### **STEP3** 下載到本地端
-``` git
+```bash
 git clone <<連結>>
 ```
 
 ### **STEP4** 新增一個分支(重要!)
-```git
-git branch week1 //建立了名為week1的分支
-git checkout week1 //切換到week1分支
+```bash
+git branch week1 #建立了名為week1的分支
+git checkout week1 #切換到week1分支
 ```
 
 ### **STEP5** 寫作業
 切換到分支後開始寫作業，完成後新增一個版本
-```git
-git commit -am "版本名稱"
+```bash
+git commit -am "commit message"
 ```
 
 ### **STEP6** 上傳到 GitHub
-```git
+```bash
 git push origin <<分支名稱>>
 ```
 
