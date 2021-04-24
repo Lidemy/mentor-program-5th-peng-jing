@@ -67,7 +67,7 @@ git commit
 - 變化型
 ```bash
 git commit -m "版本名稱" #不會進入vim模式，可直接命名
-git commit -am "版本名稱" #結合add跟版本命名，可省略 git add 步驟 (若有新檔案未曾被加入的話人需要git add這個步驟!))
+git commit -am "版本名稱" #結合add跟版本命名，可省略 git add 步驟 (若有新檔案未曾被加入的話仍需要git add這個步驟!))
 ```
 每次笑話有新版本時就要commit一次
 
