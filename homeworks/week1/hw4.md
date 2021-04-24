@@ -36,7 +36,7 @@ rm -r .git
 它會詢問是否確定刪除，輸入 Y 即可完成刪除。
 
 #### **STEP3** 時常檢查狀態
-可以知道有哪些資料被加入版本控制哪些沒有。
+可以知道有哪些資料沒有被加入版本控制。
 ```bash
 git status
 ```
@@ -67,7 +67,7 @@ git commit
 - 變化型
 ```bash
 git commit -m "版本名稱" #不會進入vim模式，可直接命名
-git commit -am "版本名稱" #結合add跟版本命名，可省略 git add 步驟
+git commit -am "版本名稱" #結合add跟版本命名，可省略 git add 步驟 (若有新檔案未曾被加入的話人需要git add這個步驟!))
 ```
 每次笑話有新版本時就要commit一次
 
