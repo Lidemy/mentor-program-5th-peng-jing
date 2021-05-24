@@ -1,0 +1,67 @@
+*{
+	font-family: "Microsoft JhengHei";
+	line-height: 1.5em;
+}
+body{
+	background-color: #f0f0f0;
+}
+
+.form{
+	border-top: solid 8px #fad312;
+	max-width: 600px;
+	box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+	background-color: white;
+	padding: 40px 42px; 
+	margin: 50px auto;
+}
+.form__title{
+	margin-bottom: 30px;
+}
+.form__title h1{
+	font-size: 36px;
+  	font-weight: bold;
+  	margin-bottom: 30px;
+}
+.form__desc{
+	font-size: 14px;
+	line-height: 1.5em;
+}
+.form__title .form__required{
+	color: #e74149;
+	line-height: 1.5em;
+	font-size: 16px;
+	margin-top: 15px;
+}
+.form__Ques{
+	font-size: 20px;
+	margin: 40px 0px 20px;
+}
+.form__required{
+	color: #e74149;
+}
+.form__content input{
+	border: solid 1px #d0d0d0;
+}
+label.form__desc{
+	margin-left: 10px;
+}
+.buttom{
+	display: block;
+	border-radius: 3px;
+  	background-color: #fad312;
+  	padding: 10px 32px;
+  	border-style: none;
+  	margin: 50px 0px 20px 0px;
+}
+.footer{
+	background-color: #000000;
+	font-size: 13px;
+	color: #999999;
+	text-align: center;
+	padding: 15px 10px;
+}
+@media screen and (max-width: 768px){
+	.form{
+		margin: 50px 15px;
+	}
+}
