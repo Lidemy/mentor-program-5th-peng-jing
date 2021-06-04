@@ -1,0 +1,65 @@
+*{
+	font-family: "微軟正黑體";
+	/* border: solid 1px; */
+	color: #189BA3;
+}
+.todo-list{
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 30px;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+	background-color: #FFFDE7;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.2)
+}
+.todo-list h1{
+	text-align: center;
+	font-size: 40px;
+}
+.todo-list__input{
+	padding: 15px;
+	transition: .5s;
+}
+.todo-list__input input{
+	border: 0;
+	outline:none;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	background-color: #FFFDE7;
+}
+.todo-list__input input:focus{
+	border-bottom: solid 2px;
+}
+.todo-list__input input:active{
+	border: 0px;
+	border-bottom: solid 1px;
+}
+.todo-list__checkbox{
+	padding: 25px 15px;
+	position: relative;
+	font-weight: 800;
+	transition: .5s;
+}
+.todo-list__checkbox:hover{
+	background-color: white;
+}
+.todo-list__checkbox input{
+	margin-right: 15px;
+}
+.todo-list__checkbox label{
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+}
+.checkbox__delete-btn{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);	
+    right: 10px;
+}
+.todo-list__delete-line{
+	text-decoration:line-through;
+	opacity: 0.4;
+}
