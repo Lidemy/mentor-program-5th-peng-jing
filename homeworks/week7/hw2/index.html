@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+ 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>餐廳官網</title>
+  	<link rel="stylesheet" href="./style.css">
+  	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+</head>
+
+<body>
+  	<nav class="navbar">
+  		<div class="wrapper">
+  			<div class="navbar__name">
+  				Just A Bite!
+	  		</div>
+  			<ul  class="navbar__list">
+	  			<li><a href="#" title="">抽個大獎</a></li>
+	  			<li><a href="#" title="">我要點餐</a></li>
+	  			<li><a href="#" title="">查詢訂單</a></li>
+	  			<li class="active"><a href="#" title="">常見問題</a></li>
+	  		</ul>
+  		</div>
+  	</nav>
+
+
+	<div class="wrapper">
+		<section class="intro">
+			<h2 class="intro__title">FAQ - 常見問題</h2>
+			<div class="faq">
+				<div class="faq__item faq__hide-answer">如何辦理退貨?
+					<div class="faq__answer">
+						<p>如果你對於購買的產品不滿意，你可在 365 天內，攜帶完好的商品、原始包裝、統一發票及明細（刷卡購買者需信用卡與簽單）到 IKEA 分店退換貨。完整退換貨資訊請點選這裡。 或是你也可以與IKEA客服連繫確認，請點選這裡確認各分店連絡方式。</p>
+					</div>
+				</div>
+				<div class="faq__item faq__hide-answer">目前提供哪些付款方式？
+					<div class="faq__answer">目前提供付款方式有五種：
+						<ol>
+							<li>『超商取貨付款』，配合通路：7-11、全家</li>
+							<li>『信用卡』付款宅配到府（僅限台灣地區發行之VISA、Master Card、JCB信用卡）</li>
+							<li>宅配貨到付款（限台灣本島）</li>
+							<li>LINE Pay（可用LINE Point折抵）</li>
+							<li>Apple Pay（僅限使用iPhone手機）</li>
+						</ol>
+						<p>※ 配合的宅配公司為：黑貓宅急便</p>
+					</div>
+				</div>
+				<div class="faq__item faq__hide-answer">線上刷卡如何操作呢？
+					<div class="faq__answer">
+						<p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+					</div>
+				</div>
+				<div class="faq__item faq__hide-answer">如何查詢目前訂單的處理情況？
+					<div class="faq__answer">
+						<p>請您先「會員登入」後至「訂單查詢」，即可查詢該訂單的處理狀態。</p>
+					</div>
+				</div>
+				<div class="faq__item faq__hide-answer">訂單成立後，是否可以取消或是更改訂單數量及商品？
+					<div class="faq__answer">
+						<ol>
+							<li>為避免影響商品庫存及避免帳務錯誤，請恕我們無法為您再將訂單『修改』或『加購』或『合併』訂單商品。</li>
+							<li> 若您已結帳完成訂單而有此需求，建議您可自行點選『取消訂單』。</li>
+						</ol>
+					</div>
+				</div>
+				<div class="faq__item faq__hide-answer">我想購買的商品已經缺貨，什麼時候會進貨呢？
+					<div class="faq__answer">
+						<p>如購物車按鈕顯示「商品售完已絕版」即表示該商品已售完無法再補貨囉！<br/>
+						如購物車按鈕顯示「貨到通知我」，請點選該按鈕並填寫聯絡資訊(E-mail或手機號碼)，商品到貨後系統會依登記順序及到貨數量陸續發送E-mail或簡訊通知（部份熱賣商品，如到貨數量＜貨到通知數量，則有可能無法收到通知）。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+
+	<footer>
+		<div class="footer__top">
+			<div class="wrapper">
+				<div class="footer__list">
+					<div class="footer__desc">餐館地址: 天上地下天堂路三分之一里六段520號</div>
+					<div  class="footer__desc">訂位專線：02-1314-5566</div>
+					<div  class="footer__desc">營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+					<div  class="footer__desc">email：service@justabite.com.tw</div>
+				</div>
+				<div class="footer_site">
+					<div class="footer_sitetitle">Just A Bite!</div>
+					<div  class="footer__desc">Facebook / Instagram / Youtube</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+		</div>
+	</footer>
+
+	<script>
+		document.querySelector('.faq').addEventListener('click',
+			function(e){
+				e.target.classList.toggle('faq__hide-answer')
+			}
+		)
+	</script>
+</body>
+</html>

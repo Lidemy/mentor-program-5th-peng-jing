@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	 	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<title>To Do List</title>
+	  	<link rel="stylesheet" href="./style.css">
+	  	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	  	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+	</head>
+
+	<body>
+	  	<div class="todo-list">
+	  		<h1>Todo List</h1>
+	  		<form>
+	  			<div class="todo-list__input">
+	  				<input type="text" placeholder="Add something to do here?">
+	  			</div>
+	  			<div class="todo-list__checkboxes">
+	  				<div class="todo-list__checkbox">
+		  				<label><input type="checkbox">Hit the gym</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  			<div class="todo-list__checkbox">
+		  				<label><input type="checkbox">Pay bills</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  			<div class="todo-list__checkbox todo-list__delete-line">
+		  				<label><input type="checkbox" checked>Meet George</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  			<div class="todo-list__checkbox todo-list__delete-line">
+		  				<label><input type="checkbox" checked>Buy eggs</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  			<div class="todo-list__checkbox">
+		  				<label><input type="checkbox">Read a book</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  			<div class="todo-list__checkbox">
+		  				<label><input type="checkbox">Organize office</label>
+		  				<div class="checkbox__delete-btn">X</div>
+		  			</div>
+		  		</div>
+	  			
+	  		</form>
+	  	</div>
+	  	<script>
+	  		document.querySelector('.todo-list').addEventListener('click',
+	  			function(e){
+	  				const checkboxes = document.querySelectorAll('.todo-list__checkbox input')
+	  				for(checkbox of checkboxes){
+	  					if(checkbox.checked){
+	 						checkbox.closest('.todo-list__checkbox').classList.add('todo-list__delete-line')
+	 					}else{
+	 						checkbox.closest('.todo-list__checkbox').classList.remove('todo-list__delete-line')
+	 					}
+	  				}
+ 					if(e.target.classList.contains('checkbox__delete-btn')){
+ 						e.target.closest('.todo-list__checkbox').remove()
+ 					}
+	  			}
+	  		)
+	  		document.querySelector('.todo-list').addEventListener('submit',
+	  			function(e){
+	  				e.preventDefault()
+	  				const listText = document.querySelector('input[type=text]').value
+	  				let newCheckbox = document.createElement('div')
+	  				newCheckbox.classList.add('todo-list__checkbox')
+	  				newCheckbox.innerHTML = `<label><input type="checkbox">${escpaeHtml(listText)}</label><div class="checkbox__delete-btn">X</div>`
+	  				if(listText){
+	  					const checkboxes = document.querySelector('.todo-list__checkboxes')
+	  					checkboxes.insertBefore(newCheckbox,checkboxes.childNodes[0])
+	  					document.querySelector('input[type=text]').value = ''
+	  				}
+	  		})
+	  		function escpaeHtml(unsafe){
+	  			return unsafe
+	  				.replace(/&/g, "&amp;")
+	  				.replace(/</g, "&lt;")
+	  				.replace(/>/g, "&gt;")
+	  				.replace(/"/g, "&quot;")
+	  				.replace(/'/g, "&#039;")
+	  		}
+	  	</script>
+	</body>
+</html>
