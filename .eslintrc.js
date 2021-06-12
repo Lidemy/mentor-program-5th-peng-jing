@@ -17,6 +17,8 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
-    'no-console': 'off'
+    'no-console': 'off',
+    'no-tabs': 'off',
+    indent: ['off', 2]
   }
 }
