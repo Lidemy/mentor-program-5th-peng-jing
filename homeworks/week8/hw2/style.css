@@ -1,0 +1,124 @@
+*{
+	font-family: '微軟正黑體';
+	/* border: solid 1px; */
+}
+
+h1,ul{margin: 0px;}
+nav{
+	height: 3rem;
+}
+.nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	box-shadow: 0px 1px 7px rgba(0,0,0,0.3);
+	background: white;
+	z-index: 1;
+}
+.nav__title{
+	font-size: 30px;
+	margin: 12px;
+}
+.nav__list{
+	list-style: none;
+	display: flex;
+}
+.nav__list li{
+	color: black;
+	text-decoration: none;
+	padding: 20px 15px;
+	transition: .5s;
+	cursor: pointer;
+}
+.nav__list li:hover{
+	background: #333;
+	color: #eee;
+}
+.games{
+	color: white;
+	text-align: center;
+	padding: 40px 10px;
+	margin: 0px auto;
+	background: #777;	
+}
+.gmaes__description{
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+.games__title{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+.live__information{
+	display: flex;
+	padding: 5px;
+	align-items: center;
+}
+.games__live{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.live__card{
+	display: inline-block;
+	background-color: #555;
+	width: 30%;
+	margin: 5px;
+	transition: .5s;
+}
+.live__card:hover{
+	transform: scale(1.1, 1.1)
+}
+.live__card a{
+	color: white;
+	text-decoration: none;
+}
+.live__image{
+	width: 100%;
+}
+.live__avatar{
+	border-radius: 50px;
+	overflow: hidden;
+	width: 50px;
+    height: 50px;
+}
+.live__avatar img{
+	width: 100%;
+}
+.live__description{
+	text-align: left;
+	margin-left: 10px;
+	width: 70%;
+}
+.live__title{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 10px;
+}
+.live__author{
+	font-size: 12px;
+}
+
+@media screen and (max-width: 768px){
+	.nav{
+		flex-wrap: wrap;
+	}
+	.live__card{
+		width: 45%;
+	}
+}
+
+
+.box {
+width: 300px;
+padding: 10px;
+border: #ef5c28 2px solid;
+}
+
+.ellipsis {
+overflow:hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
