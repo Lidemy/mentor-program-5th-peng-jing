@@ -1,0 +1,53 @@
+@import "_mixin";
+* {
+    font-family: "微軟正黑體";
+}
+html,body {
+  height: 100%;
+  margin: 0;
+}
+h1 {
+  font-size: $font-size-lg;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: $color_main;
+}
+.err {
+  color: $color_err;
+}
+.hide {
+  display: none;
+}
+.nav {
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  background-color: $color_white;
+  &__content {
+    @include flexCenter;
+    max-width: 800px;
+    padding: 0px 10px;
+    margin: 0px auto;
+  }
+  &__list {
+    @include flexCenter(space-between);
+    width: 100%;
+    ul {
+      padding: 0px;
+    }
+    li {
+      list-style: none;
+      margin-left: 20px;
+    }
+    .nav__admin {
+      margin-left: 20px;
+    }
+  }
+}
+footer {
+  padding: 10px 0px;
+  background-color: #323232;
+  font-size: $font-size-sm;
+  color: $color_white;
+  text-align: center;
+}

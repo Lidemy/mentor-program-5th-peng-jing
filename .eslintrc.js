@@ -17,6 +17,9 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
     'no-console': 'off',
     'no-tabs': 'off',
     indent: ['off', 2]

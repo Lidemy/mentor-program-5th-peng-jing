@@ -1,0 +1,15 @@
+@mixin flexCenter($justify-content: center, $align-items: center){
+	display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+@mixin absCenter($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%); 
+}
+@mixin font-bold($size) {
+  font-size: $size;
+  font-weight: 900;
+}

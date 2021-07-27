@@ -1,0 +1,98 @@
+@import "_variables";
+@import "_components";
+@import "_layouts";
+@import "_mixin";
+main {
+	min-height: 100%;
+}
+.banner {
+	background-color: $color_main;
+	height: 300px;
+	color: $color_white;
+	position: relative;
+	z-index: -1;
+	&__content {
+		@include absCenter;
+		text-align: center;
+		line-height: 2.5em;
+  	letter-spacing: 0.3em;
+		width: 100%;
+	}
+	&__title {
+		@include font-bold($font-size-lg);
+	}
+}
+.login {
+	height: 100%;
+	background-color: $color_main;
+}
+.card {
+	@extend %card;
+	max-width: 500px;
+	margin: 50px auto;
+	padding: 60px;
+	background-color: $color_white;
+	&__title {
+		@include font-bold($font-size-lg);
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	&__input-title {
+		margin: 20px 0px 10px;
+	}
+	&__submit {
+		margin-top: 40px;
+		background-color: $color_main;
+		color: $color_white;
+		font-size: $font-size-md;
+	}
+	input {
+		@extend %input;
+	}
+}
+.posts {
+	margin: -80px 10px 0px 10px;
+}
+.post{
+	@extend %card;
+	input {
+		@extend %input;
+	}
+	textarea {
+		width: 100%;
+		box-sizing: border-box;
+		margin-top: 20px;
+		padding: 10px;
+	}
+	&__title {
+		@include font-bold($font-size-md);
+		margin-right: 50px;
+	}
+	&__date {
+		font-size: $font-size-sm;
+		color: rgba($color_main,0.7);
+		margin: 5px 0px 10px;
+	}
+	&__btn {
+		border: solid 1px;
+		padding: 10px 15px;
+		margin-top: 20px;
+		display: inline-block;
+	}
+	&__edit {
+		position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: $font-size-md;
+	}
+	&_table {
+		width: 100%;
+	}
+	thead tr {
+		background-color: $color_main;
+		color: $color_white;
+	}
+	tbody tr:nth-child(2n) {
+		background-color: rgba(0,0,0,0.1);
+	}
+}
