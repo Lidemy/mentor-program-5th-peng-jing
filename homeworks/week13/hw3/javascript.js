@@ -12,14 +12,6 @@ const STREAM_TEMPLATE = `<a href="$channelUrl">
 				</div>
 			</div>
   		</a>`
-getGames((games) => {
-	for (const game of games) {
-		const li = document.createElement('li')
-		li.innerText = game.game.name
-		document.querySelector('.nav__list').appendChild(li)
-	}
-	changeStreams(games[0].game.name)
-})
 // 取得被點擊的 list 遊戲名稱
 document.querySelector('.nav__list').addEventListener('click', (e) => {
 	if (e.target.tagName.toLowerCase() === 'li') {
@@ -27,25 +19,42 @@ document.querySelector('.nav__list').addEventListener('click', (e) => {
 		changeStreams(gameName)
 	}
 })
-// 取得前五名遊戲名稱陣列
-function getGames(callback) {
-	fetch(`${API_URL}/games/top?limit=5`, {
-		headers: {
-			'Client-ID': CLIENT_ID,
-			Accept: 'application/vnd.twitchtv.v5+json'
+// 拿到前五名的遊戲並顯示在 nav
+async function getGames() {
+	try {
+		const response = await fetch(`${API_URL}/games/top?limit=5`, {
+			headers: {
+				'Client-ID': CLIENT_ID,
+				Accept: 'application/vnd.twitchtv.v5+json'
+			}
+		})
+		const gamesJson = await response.json()
+		const games = gamesJson.top
+		for (const game of games) {
+			const li = document.createElement('li')
+			li.innerText = game.game.name
+			document.querySelector('.nav__list').appendChild(li)
 		}
-	}).then((response) => response.json()).then((json) => {
-		const games = json.top
-		callback(games)
-	}).catch((error) => {
-		console.log('error', error)
-	})
+		changeStreams(games[0].game.name) // 用第一名遊戲名稱拿到前 20 名實況
+	} catch (err) {
+		console.log('err', err)
+	}
 }
-function changeStreams(gameName) {
+getGames()// 呼叫執行 getGames function
+// 拿到前 20 名實況並顯示
+async function changeStreams(gameName) {
 	document.querySelector('.games__title').innerText = gameName
 	document.querySelector('.games__live').innerHTML = `<div class="live__card empty"></div>
 		<div class="live__card empty"></div>`
-	getStream(gameName, (streams) => {
+	try {
+		const response = await fetch(`${API_URL}/streams/?game=${encodeURIComponent(gameName)}&limit=20`, {
+			headers: {
+				'Client-ID': CLIENT_ID,
+				Accept: 'application/vnd.twitchtv.v5+json'
+			}
+		})
+		const streamsJson = await response.json()
+		const { streams } = streamsJson
 		for (let i = streams.length - 1; i >= 0; i--) {
 			const div = document.createElement('div')
 			div.classList.add('live__card')
@@ -58,16 +67,7 @@ function changeStreams(gameName) {
 			const gameLive = document.querySelector('.games__live')
 			gameLive.insertBefore(div, gameLive.childNodes[0])
 		}
-	})
-}
-function getStream(gameName, callback) {
-	fetch(`${API_URL}/streams/?game=${encodeURIComponent(gameName)}&limit=20`, {
-		headers: {
-			'Client-ID': CLIENT_ID,
-			Accept: 'application/vnd.twitchtv.v5+json'
-		}
-	}).then((response) => response.json()).then((json) => {
-		const stream = json.streams
-		callback(stream)
-	})
+	} catch (err) {
+		console.log('err', err)
+	}
 }
