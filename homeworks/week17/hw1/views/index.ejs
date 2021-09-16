@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+
+  <body>
+    <%- include('template/nav') %>
+    <main>
+      <div class="banner">
+        <div class="banner__content">
+          <div class="banner__title">存放技術之地</div>
+          Welcome to my blog
+        </div>
+      </div>
+      <div class="posts">
+        <h2 class="err"><%= errorMessage %></h2>
+        <% articles.forEach(function(article) { %>
+          <% if (article.is_delete === 1){ %>
+            <% return %>
+          <% } %>
+          <div class="post">
+            <div class="post__title"><%= article.title %></div>
+            <div class="post__date"><%= article.createdAt %></div>
+            <div class="post__preview"><%= article.content %></div>
+            <div><a class="post__btn" href="/article/<%= article.id%>">繼續閱讀</a></div>
+          </div>
+        <% }) %>
+      </div>
+        
+    </main>
+    <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+  </body>
+</html>

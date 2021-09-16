@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+
+  <body>
+    <%- include('template/nav') %>
+    <main>
+      <div class="banner">
+        <div class="banner__content">
+          <div class="banner__title">存放技術之地</div>
+          Welcome to my blog
+        </div>
+      </div>
+      <div class="posts">
+        <div class="post">
+          <h3>發表文章</h3>
+          <h2 class="err"><%= errorMessage %></h2>
+          <form method="POST" action="/create">
+            <input type="text" placeholder="請輸入文章標題" name="title">
+            <textarea name="content" rows="20"></textarea>
+            <input class="card__submit" type="submit" value="送出">
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+  </body>
+</html>

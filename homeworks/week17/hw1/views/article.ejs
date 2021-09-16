@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('template/head') %>
+    
+  </head>
+
+  <body>
+    <%- include('template/nav') %>
+    <main>
+      <div class="banner">
+        <div class="banner__content">
+          <div class="banner__title">存放技術之地</div>
+          Welcome to my blog
+        </div>
+      </div>
+      <div class="posts">
+        <div class="post">
+          <p class="err"><%= errorMessage %></p>
+          <div class="post__title"><%= article.title%></div>
+          <div class="post__date"><%= article.createAt%></div>
+          <div class="post__content"><%= article.content%></div>
+          <div>
+            <a class="post__btn" href="<%= url%>">返回</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+  </body>
+</html>

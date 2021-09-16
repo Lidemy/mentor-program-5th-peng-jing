@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+
+  <body>
+    <%- include('template/nav') %>
+    <main>
+      <div class="banner">
+        <div class="banner__content">
+          <div class="banner__title">所有文章</div>
+        </div>
+      </div>
+      <div class="posts">
+        <div class="post">
+          <%= errorMessage%>
+          <table class="post_table">
+            <thead>
+                <tr>
+                    <th>標題</th>
+                    <th>編輯</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% articles.forEach(function(article) { %>
+                <% if (article.is_delete === 1) { %>
+                  <% return %>
+                <% } %>
+                <tr>
+                  <td class="td_posttitle"><%= article.title %></td>
+                  <td class="td_edit_btn">
+                    <a href="/article/<%= article.id%>"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a href="/update/<%= article.id%>"><i class="fa fa-pencil-square-o edit_btn" aria-hidden="true"></i></a>
+                    <a href="/delete/<%= article.id %>"><i class="fa fa-trash edit_btn" aria-hidden="true"></i></a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+  </body>
+</html>

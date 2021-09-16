@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('template/head') %>
+  </head>
+
+  <body>
+    <%- include('template/nav') %>
+    <main>
+      <div class="card">
+        <div class="card__title">Login</div>
+        <%= errorMessage %>
+        <form method="POST" action="/login">
+          <div class="card__input-title">USERNAME</div>
+          <input type="text" name="username">
+          <div class="card__input-title">PASSWORD</div>
+          <input type="password" name="password">
+          <input class="card__submit" type="submit" value="登入">
+        </form>
+      </div>
+    </main>
+    <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+  </body>
+</html>
